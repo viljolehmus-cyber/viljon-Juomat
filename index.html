@@ -446,9 +446,10 @@
   }
   .coming-cards {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 32px;
-    margin-top: 60px;
+    max-width: 800px;
+    margin: 60px auto 0;
   }
   .coming-card {
     aspect-ratio: 3/4;
@@ -609,7 +610,6 @@
     .product-section { margin: 0 -32px; padding-left: 32px; padding-right: 32px; }
     .manifesto, .product { grid-template-columns: 1fr; gap: 60px; }
     .principles, .coming-cards { grid-template-columns: repeat(2, 1fr); gap: 40px; }
-    .coming-cards > :last-child { grid-column: 1 / -1; max-width: 50%; margin: 0 auto; width: 100%; }
     .footer-inner { grid-template-columns: 1fr 1fr; gap: 40px; }
   }
 
@@ -747,11 +747,6 @@
       gap: 16px;
       margin-top: 44px;
     }
-    .coming-cards > :last-child {
-      grid-column: 1 / -1;
-      max-width: 100%;
-      margin: 0;
-    }
     .coming-card { padding: 20px; aspect-ratio: 1; }
     .coming-card .qmark { font-size: 56px; margin-bottom: 8px; }
     .coming-card .label { font-size: 10px; letter-spacing: 3px; }
@@ -782,7 +777,6 @@
     .product-specs { grid-template-columns: 1fr; }
     .product-specs > div:nth-child(3) { grid-column: auto; }
     .coming-cards { grid-template-columns: 1fr; }
-    .coming-cards > :last-child { grid-column: auto; }
   }
 </style>
 </head>
@@ -922,11 +916,6 @@
       </p>
     </div>
     <div class="coming-cards">
-      <div class="coming-card reveal">
-        <div class="qmark">?</div>
-        <div class="label">Kesä MMXXVI</div>
-        <div class="hint">jotain raikasta</div>
-      </div>
       <div class="coming-card reveal">
         <div class="qmark">?</div>
         <div class="label">Syksy MMXXVI</div>
