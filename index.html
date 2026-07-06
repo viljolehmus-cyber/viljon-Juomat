@@ -297,7 +297,8 @@
     transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
   .product-visual:hover { transform: translateY(-6px) rotate(-0.4deg); }
-  .product-visual img {
+  .product-visual img,
+  .product-visual svg {
     width: 100%;
     height: 100%;
     object-fit: contain;
@@ -368,6 +369,18 @@
   .spec-value {
     font-family: 'Playfair Display', serif;
     font-size: 16px;
+  }
+
+  /* Useampi tuote samassa osiossa */
+  .product + .product { margin-top: 140px; }
+  @media (min-width: 1001px) {
+    .product.reverse .product-visual { order: 2; }
+  }
+  @media (max-width: 1000px) {
+    .product + .product { margin-top: 96px; }
+  }
+  @media (max-width: 700px) {
+    .product + .product { margin-top: 72px; }
   }
 
   /* ---------------- PHILOSOPHY ---------------- */
@@ -699,7 +712,8 @@
     .product-section { margin: 0 -22px; padding: 80px 22px; }
     .product { gap: 32px; }
     .product-visual { aspect-ratio: 4/5; }
-    .product-visual img { padding: 4px; }
+    .product-visual img,
+    .product-visual svg { padding: 4px; }
     .product-meta { font-size: 10px; letter-spacing: 4px; }
     .product-name {
       font-size: clamp(48px, 14vw, 64px);
@@ -840,6 +854,134 @@
         <div>
           <div class="spec-label">Saatavilla</div>
           <div class="spec-value">Vappuna</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="product reverse">
+    <div class="product-visual reveal">
+      <svg class="bottle-art" viewBox="0 0 600 800" role="img" aria-label="Louhisaaren sima -pullo" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="glass-amber" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#241407"/>
+            <stop offset="0.22" stop-color="#4a2a12"/>
+            <stop offset="0.45" stop-color="#6e4522"/>
+            <stop offset="0.6" stop-color="#7a4f27"/>
+            <stop offset="0.78" stop-color="#45260f"/>
+            <stop offset="1" stop-color="#1e1006"/>
+          </linearGradient>
+          <g id="elderflower" fill="#f7f2e8" stroke="#4a4239" stroke-width="0.9">
+            <circle cx="0" cy="-3.4" r="2.1"/>
+            <circle cx="3.2" cy="-1" r="2.1"/>
+            <circle cx="2" cy="2.8" r="2.1"/>
+            <circle cx="-2" cy="2.8" r="2.1"/>
+            <circle cx="-3.2" cy="-1" r="2.1"/>
+            <circle cx="0" cy="0" r="0.9" fill="#4a4239" stroke="none"/>
+          </g>
+        </defs>
+
+        <!-- Varjo -->
+        <ellipse cx="300" cy="742" rx="140" ry="13" fill="#1a1612" opacity="0.1"/>
+
+        <!-- Pullo -->
+        <path d="M272,182 L328,182 L332,296 C336,336 392,346 392,392 L392,696 Q392,722 366,722 L234,722 Q208,722 208,696 L208,392 C208,346 264,336 268,296 Z"
+              fill="url(#glass-amber)" stroke="#170d05" stroke-width="2"/>
+        <!-- Lasin kiillot -->
+        <path d="M232,392 L232,690" stroke="#ffffff" stroke-width="14" stroke-linecap="round" opacity="0.13" fill="none"/>
+        <path d="M282,200 L285,290" stroke="#ffffff" stroke-width="8" stroke-linecap="round" opacity="0.16" fill="none"/>
+        <path d="M374,400 L374,686" stroke="#ffffff" stroke-width="6" stroke-linecap="round" opacity="0.06" fill="none"/>
+
+        <!-- Suurenne ja patenttikorkki -->
+        <rect x="266" y="164" width="68" height="20" rx="8" fill="#2b1809" stroke="#170d05" stroke-width="2"/>
+        <rect x="280" y="150" width="40" height="14" rx="5" fill="#b04434" stroke="#7c2c20" stroke-width="1.5"/>
+        <rect x="277" y="112" width="46" height="38" rx="13" fill="#f4efe4" stroke="#b3a68f" stroke-width="2"/>
+        <path d="M285,124 C288,117 312,117 315,124" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity="0.7" fill="none"/>
+        <!-- Kiinnityslangat -->
+        <ellipse cx="300" cy="212" rx="33" ry="6" fill="none" stroke="#6f675c" stroke-width="3"/>
+        <path d="M270,209 C256,196 258,164 279,149" fill="none" stroke="#6f675c" stroke-width="3.5" stroke-linecap="round"/>
+        <path d="M330,209 C344,196 342,164 321,149" fill="none" stroke="#6f675c" stroke-width="3.5" stroke-linecap="round"/>
+        <path d="M279,149 C280,112 320,112 321,149" fill="none" stroke="#6f675c" stroke-width="3.5" stroke-linecap="round"/>
+
+        <!-- Etiketti -->
+        <rect x="212" y="412" width="176" height="278" fill="#f7f2e8" stroke="#cfc4ae" stroke-width="1.5"/>
+        <text x="300" y="452" text-anchor="middle" font-family="'Playfair Display', Georgia, serif" font-size="21" fill="#1a1612">Louhisaaren sima</text>
+        <text x="300" y="477" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-size="11.5" letter-spacing="1" fill="#4a4239">perinteinen suomalainen sima</text>
+
+        <!-- Seljankukkaterttu -->
+        <g stroke="#4a4239" stroke-width="1" fill="none">
+          <path d="M258,598 C256,584 252,572 244,562"/>
+          <path d="M258,598 C258,582 260,570 266,556"/>
+          <path d="M258,598 C250,588 240,580 236,570"/>
+          <path d="M258,598 C264,586 270,578 272,568"/>
+        </g>
+        <path d="M231,533 C221,521 223,507 235,503 C243,511 241,525 231,533 Z" fill="#ece5d4" stroke="#4a4239" stroke-width="1"/>
+        <path d="M233,529 L234,507" stroke="#4a4239" stroke-width="0.7" fill="none"/>
+        <use href="#elderflower" x="244" y="560"/>
+        <use href="#elderflower" x="252" y="548"/>
+        <use href="#elderflower" x="262" y="542"/>
+        <use href="#elderflower" x="272" y="551"/>
+        <use href="#elderflower" x="238" y="571"/>
+        <use href="#elderflower" x="250" y="566"/>
+        <use href="#elderflower" x="263" y="558"/>
+        <use href="#elderflower" x="256" y="536"/>
+        <use href="#elderflower" x="268" y="540"/>
+        <circle cx="234" cy="558" r="1.2" fill="#4a4239"/>
+        <circle cx="276" cy="543" r="1.2" fill="#4a4239"/>
+        <circle cx="246" cy="536" r="1.2" fill="#4a4239"/>
+
+        <!-- Sitruuna ja lehti -->
+        <path d="M318,552 C330,528 356,522 366,534 C360,550 334,560 318,552 Z" fill="#e7dfcb" stroke="#4a4239" stroke-width="1.2"/>
+        <path d="M322,551 C334,544 352,538 363,535" stroke="#4a4239" stroke-width="0.8" fill="none"/>
+        <path d="M318,552 C314,558 312,564 314,572" stroke="#4a4239" stroke-width="1.2" fill="none"/>
+        <g transform="translate(325,587) rotate(-18)">
+          <ellipse rx="36" ry="26" fill="#f0e9d8" stroke="#4a4239" stroke-width="1.4"/>
+          <ellipse cx="36" cy="0" rx="5" ry="4" fill="#f0e9d8" stroke="#4a4239" stroke-width="1.2"/>
+          <ellipse cx="-36" cy="0" rx="4" ry="3.5" fill="#f0e9d8" stroke="#4a4239" stroke-width="1.2"/>
+          <circle cx="-12" cy="7" r="0.8" fill="#4a4239"/>
+          <circle cx="-2" cy="-9" r="0.8" fill="#4a4239"/>
+          <circle cx="10" cy="4" r="0.8" fill="#4a4239"/>
+          <circle cx="20" cy="-6" r="0.8" fill="#4a4239"/>
+          <circle cx="4" cy="13" r="0.8" fill="#4a4239"/>
+        </g>
+
+        <!-- Sitruunaviipale -->
+        <g transform="translate(282,628)">
+          <circle r="23" fill="#f4eedd" stroke="#4a4239" stroke-width="1.4"/>
+          <circle r="17.5" fill="none" stroke="#4a4239" stroke-width="0.8"/>
+          <g stroke="#4a4239" stroke-width="0.8">
+            <line x1="0" y1="-3" x2="0" y2="-16"/>
+            <line x1="2.1" y1="-2.1" x2="11.3" y2="-11.3"/>
+            <line x1="3" y1="0" x2="16" y2="0"/>
+            <line x1="2.1" y1="2.1" x2="11.3" y2="11.3"/>
+            <line x1="0" y1="3" x2="0" y2="16"/>
+            <line x1="-2.1" y1="2.1" x2="-11.3" y2="11.3"/>
+            <line x1="-3" y1="0" x2="-16" y2="0"/>
+            <line x1="-2.1" y1="-2.1" x2="-11.3" y2="-11.3"/>
+          </g>
+          <circle r="1" fill="#4a4239"/>
+        </g>
+
+        <text x="300" y="672" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-size="14" letter-spacing="2" fill="#4a4239">500 ml &#8226; 1,2 %</text>
+      </svg>
+    </div>
+    <div class="product-info reveal">
+      <div class="product-meta">N° 002 — Kesäerä MMXXVI</div>
+      <h2 class="product-name"><span class="script">Louhisaaren</span>SIMA</h2>
+      <p class="product-tagline">perinteinen suomalainen sima</p>
+      <p class="product-desc">Louhisaaren kartanon perinteistä ammentava kesäsima. Sitruunan kirpeys ja seljankukan hento kukkaisuus kohtaavat kevyessä kuplinnassa — raikas, kirkas ja vaarallisen helppo juoda. Pullotettu käsin patenttikorkkipulloon, nautittavaksi hyvin kylmänä.</p>
+      <div class="product-specs">
+        <div>
+          <div class="spec-label">Tilavuus</div>
+          <div class="spec-value">500 ml</div>
+        </div>
+        <div>
+          <div class="spec-label">Vahvuus</div>
+          <div class="spec-value">1,2 %</div>
+        </div>
+        <div>
+          <div class="spec-label">Saatavilla</div>
+          <div class="spec-value">Kesällä</div>
         </div>
       </div>
     </div>
